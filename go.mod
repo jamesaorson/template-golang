@@ -3,7 +3,7 @@ module github.com/jamesaorson/template-golang
 go 1.24.2
 
 require (
-	github.com/go-viper/mapstructure/v2 v2.4.0
+	github.com/go-viper/mapstructure/v2 v2.5.0
 	github.com/spf13/viper v1.21.0
 )
 
