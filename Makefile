@@ -33,7 +33,7 @@ GOLINT_ARGS ?= --verbose --config .golangci.yml
 format: ## Format code
 	go tool golangci-lint fmt $(GOLINT_ARGS)
 
-lint: format ## Lint code
+lint: ## Lint code
 	go tool golangci-lint run --fix $(GOLINT_ARGS) ./...
 
 ##@ Helpers
