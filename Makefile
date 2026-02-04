@@ -28,7 +28,7 @@ tidy: ## Go deps (go mod tidy)
 
 ##@ Code Quality
 
-GOLINT_ARGS ?= --timeout 5m --verbose --config .golangci.yml
+GOLINT_ARGS ?= --verbose --config .golangci.yml
 
 format: ## Format code
 	go tool golangci-lint fmt $(GOLINT_ARGS)

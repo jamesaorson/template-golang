@@ -39,4 +39,6 @@ jobs:
           git diff --exit-code -- .
 
       - name: Lint
+        env:
+          GOLINT_ARGS: --timeout 5m --verbose --config .golangci.yml
         run: make lint
