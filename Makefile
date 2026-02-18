@@ -1,5 +1,5 @@
-SHELL := bash
-.SHELLFLAGS = -e -o pipefail -c
+SHELL := /usr/bin/env
+.SHELLFLAGS = bash -e -o pipefail -c
 .DEFAULT_GOAL := help
 .NOTPARALLEL:
 .SILENT: # use set -v to print commands executed
