@@ -39,6 +39,5 @@ jobs:
           git diff --exit-code -- .
 
       - name: Lint
-        env:
-          GOLINT_ARGS: --verbose --config .golangci.yml
-        run: make lint
+        run: |
+            make check
