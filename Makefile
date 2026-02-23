@@ -36,6 +36,7 @@ setup/gotools: ## Install go tools
 	$(GO) install github.com/go-delve/delve/cmd/dlv@latest
 	$(GO) install honnef.co/go/tools/cmd/staticcheck@latest
 
+.PHONY: setup/air
 setup/air: ## Install air tool
 	$(GO) install github.com/air-verse/air@latest
 
@@ -50,7 +51,7 @@ build/go: ## Build Go codebase
 	$(GO) build -o $(EXE) $(MAIN)
 
 .PHONY: clean
-clean: clean/build ## Clean build space
+clean: ## Clean build space
 	rm -rf \
 		./build \
 		./tmp
@@ -109,7 +110,7 @@ format/go: ## Format Go code
 ##@ Helpers
 
 .PHONY: help
-help:  ## Display this help
+help: ## Display this help
 	awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 
 env-%: ## Check if env var is defined
