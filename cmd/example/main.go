@@ -7,8 +7,6 @@ import (
 	"github.com/jamesaorson/template-golang/internal/example"
 )
 
-const ReadHeaderTimeoutInSec = 5
-
 func main() {
 	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
 
